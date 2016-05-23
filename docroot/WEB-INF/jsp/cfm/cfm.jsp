@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Cfm</b> portlet in View mode.
+This is the <b>Cfm</b> <p>${hi}<p> in View mode.

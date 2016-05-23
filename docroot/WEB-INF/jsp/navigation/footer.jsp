@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Navigation</b> portlet in View mode.
+This is the <b>Navigation</b> <p>${hi}<p> in View mode.

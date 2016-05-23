@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Media</b> portlet in View mode.
+This is the <b>Media</b> <p>${hi}<p> in View mode.

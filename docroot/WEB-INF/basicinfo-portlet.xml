@@ -17,12 +17,12 @@
  
 	<!-- Scans the classpath for annotated components that will be auto-registered as Spring beans.
 	 For example @Controller and @Service. Make sure to set the correct base-package-->
-	<context:component-scan base-package="com.Controller"/>
+	<context:component-scan base-package="com.alma.controller"/>
 	<bean id="portletModeHandlerMapping" class="org.springframework.web.portlet.handler.PortletModeHandlerMapping">
 	<property name="portletModeMap">
 	<map>
 	<entry key="VIEW">
-	<ref bean="navigationController" />
+	<ref bean="basicinfoController" />
 	</entry>
 	</map>
 	</property>
@@ -37,7 +37,7 @@
  
  <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
   <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView" />
-  <property name="prefix" value="/WEB-INF/jsp/" />
+  <property name="prefix" value="/WEB-INF/jsp/basicinfo/" />
   <property name="suffix" value=".jsp" />
   <property name="order" value="1" />
  </bean>

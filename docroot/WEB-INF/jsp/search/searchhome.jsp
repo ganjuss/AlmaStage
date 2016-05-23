@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Search</b> portlet in View mode.
+This is the <b>Search</b> <p>${hi}<p> in View mode.

@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Basic Info</b> portlet in View mode.
+This is the <b>Basic Info</b> <p>${hi}<p> in View mode.

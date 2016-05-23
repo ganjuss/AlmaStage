@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Sign Up</b> portlet in View mode.
+This is the <b>Sign Up</b> <p>${hi}<p> in View mode.
