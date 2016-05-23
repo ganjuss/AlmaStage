@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.db.model.about_us">
+		<field name="cid" type="long" />
+		<field name="profile_id" type="long" />
+		<field name="text" type="String" />
+	</model>
+	<model name="com.db.model.acheivements">
+		<field name="cid" type="long" />
+	</model>
+	<model name="com.db.model.cfm">
+		<field name="cid" type="long" />
+		<field name="cfm_by" type="long" />
+		<field name="cfm_to" type="long" />
+		<field name="cfm_type_id" type="long" />
+	</model>
+	<model name="com.db.model.cfm_master">
+		<field name="cid" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.db.model.club_users">
+		<field name="cid" type="long" />
+		<field name="club_id" type="long" />
+		<field name="user_id" type="long" />
+	</model>
+	<model name="com.db.model.clubs">
+		<field name="cid" type="long" />
+		<field name="name" type="String" />
+		<field name="admin_user_id" type="long" />
+	</model>
+	<model name="com.db.model.genere_master">
+		<field name="cid" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.db.model.hit_count">
+		<field name="cid" type="long" />
+		<field name="profile_id" type="long" />
+		<field name="user_id" type="long" />
+		<field name="counter" type="long" />
+		<field name="highfive" type="long" />
+	</model>
+	<model name="com.db.model.media_links">
+		<field name="cid" type="long" />
+		<field name="profile_id" type="long" />
+		<field name="media_type_id" type="long" />
+		<field name="link" type="String" />
+	</model>
+	<model name="com.db.model.media_links_master">
+		<field name="cid" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.db.model.messages">
+		<field name="cid" type="long" />
+	</model>
+	<model name="com.db.model.notifications">
+		<field name="cid" type="long" />
+	</model>
+	<model name="com.db.model.profile">
+		<field name="cid" type="long" />
+		<field name="type_id" type="long" />
+		<field name="genere_id" type="long" />
+		<field name="user_id" type="long" />
+	</model>
+	<model name="com.db.model.profile_social_link">
+		<field name="cid" type="long" />
+		<field name="social_type_id" type="long" />
+		<field name="link" type="String" />
+		<field name="profile_id" type="long" />
+	</model>
+	<model name="com.db.model.recommendations">
+		<field name="cid" type="long" />
+	</model>
+	<model name="com.db.model.skill">
+		<field name="cid" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.db.model.skill_user_mapping">
+		<field name="cid" type="long" />
+		<field name="skill_id" type="long" />
+		<field name="profile_id" type="long" />
+		<field name="type_id" type="long" />
+	</model>
+	<model name="com.db.model.social_login">
+		<field name="cid" type="long" />
+		<field name="social_type_id" type="long" />
+		<field name="profile_id" type="long" />
+		<field name="social_id" type="long" />
+	</model>
+	<model name="com.db.model.social_type_master">
+		<field name="cid" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.db.model.type_master">
+		<field name="cid" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.db.model.user_contact">
+		<field name="cid" type="long" />
+		<field name="profile_id" type="long" />
+		<field name="user_id" type="long" />
+		<field name="email" type="String" />
+		<field name="phone" type="long" />
+		<field name="dob" type="Date" />
+		<field name="city" type="String" />
+		<field name="gender" type="String" />
+	</model>
+</model-hints>

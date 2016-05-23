@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.db.model.impl.about_usModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="profile_id" />
+			<basic name="text">
+				<column name="TEXT_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.acheivementsModelImpl">
+		<attributes>
+			<id name="cid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.cfmModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="cfm_by" />
+			<basic name="cfm_to" />
+			<basic name="cfm_type_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.cfm_masterModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.club_usersModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="club_id" />
+			<basic name="user_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.clubsModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="name" />
+			<basic name="admin_user_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.genere_masterModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.hit_countModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="profile_id" />
+			<basic name="user_id" />
+			<basic name="counter" />
+			<basic name="highfive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.media_linksModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="profile_id" />
+			<basic name="media_type_id" />
+			<basic name="link" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.media_links_masterModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.messagesModelImpl">
+		<attributes>
+			<id name="cid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.notificationsModelImpl">
+		<attributes>
+			<id name="cid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.profileModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="type_id" />
+			<basic name="genere_id" />
+			<basic name="user_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.profile_social_linkModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="social_type_id" />
+			<basic name="link" />
+			<basic name="profile_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.recommendationsModelImpl">
+		<attributes>
+			<id name="cid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.skillModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.skill_user_mappingModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="skill_id" />
+			<basic name="profile_id" />
+			<basic name="type_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.social_loginModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="social_type_id" />
+			<basic name="profile_id" />
+			<basic name="social_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.social_type_masterModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.type_masterModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.db.model.impl.user_contactModelImpl">
+		<attributes>
+			<id name="cid" />
+			<basic name="profile_id" />
+			<basic name="user_id" />
+			<basic name="email" />
+			<basic name="phone" />
+			<basic name="dob">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="city" />
+			<basic name="gender" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.db.model.impl.about_usImpl" name="about_us">
+		<table name="c_about_us" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.acheivementsImpl" name="acheivements">
+		<table name="c_acheivments" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.cfmImpl" name="cfm">
+		<table name="c_cfm" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.cfm_masterImpl" name="cfm_master">
+		<table name="database_cfm_master" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.club_usersImpl" name="club_users">
+		<table name="c_club_users" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.clubsImpl" name="clubs">
+		<table name="c_club" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.genere_masterImpl" name="genere_master">
+		<table name="c_genere_master" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.hit_countImpl" name="hit_count">
+		<table name="c_hit_count" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.media_linksImpl" name="media_links">
+		<table name="c_media_links" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.media_links_masterImpl" name="media_links_master">
+		<table name="c_media_link_master" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.messagesImpl" name="messages">
+		<table name="c_messages" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.notificationsImpl" name="notifications">
+		<table name="c_notifications" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.profileImpl" name="profile">
+		<table name="c_profile" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.profile_social_linkImpl" name="profile_social_link">
+		<table name="c_profile_social_link" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.recommendationsImpl" name="recommendations">
+		<table name="c_recommendations" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.skillImpl" name="skill">
+		<table name="c_skill" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.skill_user_mappingImpl" name="skill_user_mapping">
+		<table name="c_skill_user_mapping" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.social_loginImpl" name="social_login">
+		<table name="c_social_login" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.social_type_masterImpl" name="social_type_master">
+		<table name="c_social_type_master" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.type_masterImpl" name="type_master">
+		<table name="c_type_master" />
+		<attributes />
+	</entity>
+	<entity class="com.db.model.impl.user_contactImpl" name="user_contact">
+		<table name="c_user_contact" />
+		<attributes />
+	</entity>
+</entity-mappings>

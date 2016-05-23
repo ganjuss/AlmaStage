@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.db.service.about_usLocalService" class="com.db.service.impl.about_usLocalServiceImpl" />
+	<bean id="com.db.service.about_usService" class="com.db.service.impl.about_usServiceImpl" />
+	<bean id="com.db.service.persistence.about_usPersistence" class="com.db.service.persistence.about_usPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.acheivementsLocalService" class="com.db.service.impl.acheivementsLocalServiceImpl" />
+	<bean id="com.db.service.acheivementsService" class="com.db.service.impl.acheivementsServiceImpl" />
+	<bean id="com.db.service.persistence.acheivementsPersistence" class="com.db.service.persistence.acheivementsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.cfmLocalService" class="com.db.service.impl.cfmLocalServiceImpl" />
+	<bean id="com.db.service.cfmService" class="com.db.service.impl.cfmServiceImpl" />
+	<bean id="com.db.service.persistence.cfmPersistence" class="com.db.service.persistence.cfmPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.cfm_masterLocalService" class="com.db.service.impl.cfm_masterLocalServiceImpl" />
+	<bean id="com.db.service.cfm_masterService" class="com.db.service.impl.cfm_masterServiceImpl" />
+	<bean id="com.db.service.persistence.cfm_masterPersistence" class="com.db.service.persistence.cfm_masterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.club_usersLocalService" class="com.db.service.impl.club_usersLocalServiceImpl" />
+	<bean id="com.db.service.club_usersService" class="com.db.service.impl.club_usersServiceImpl" />
+	<bean id="com.db.service.persistence.club_usersPersistence" class="com.db.service.persistence.club_usersPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.clubsLocalService" class="com.db.service.impl.clubsLocalServiceImpl" />
+	<bean id="com.db.service.clubsService" class="com.db.service.impl.clubsServiceImpl" />
+	<bean id="com.db.service.persistence.clubsPersistence" class="com.db.service.persistence.clubsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.genere_masterLocalService" class="com.db.service.impl.genere_masterLocalServiceImpl" />
+	<bean id="com.db.service.genere_masterService" class="com.db.service.impl.genere_masterServiceImpl" />
+	<bean id="com.db.service.persistence.genere_masterPersistence" class="com.db.service.persistence.genere_masterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.hit_countLocalService" class="com.db.service.impl.hit_countLocalServiceImpl" />
+	<bean id="com.db.service.hit_countService" class="com.db.service.impl.hit_countServiceImpl" />
+	<bean id="com.db.service.persistence.hit_countPersistence" class="com.db.service.persistence.hit_countPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.media_linksLocalService" class="com.db.service.impl.media_linksLocalServiceImpl" />
+	<bean id="com.db.service.media_linksService" class="com.db.service.impl.media_linksServiceImpl" />
+	<bean id="com.db.service.persistence.media_linksPersistence" class="com.db.service.persistence.media_linksPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.media_links_masterLocalService" class="com.db.service.impl.media_links_masterLocalServiceImpl" />
+	<bean id="com.db.service.media_links_masterService" class="com.db.service.impl.media_links_masterServiceImpl" />
+	<bean id="com.db.service.persistence.media_links_masterPersistence" class="com.db.service.persistence.media_links_masterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.messagesLocalService" class="com.db.service.impl.messagesLocalServiceImpl" />
+	<bean id="com.db.service.messagesService" class="com.db.service.impl.messagesServiceImpl" />
+	<bean id="com.db.service.persistence.messagesPersistence" class="com.db.service.persistence.messagesPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.notificationsLocalService" class="com.db.service.impl.notificationsLocalServiceImpl" />
+	<bean id="com.db.service.notificationsService" class="com.db.service.impl.notificationsServiceImpl" />
+	<bean id="com.db.service.persistence.notificationsPersistence" class="com.db.service.persistence.notificationsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.profileLocalService" class="com.db.service.impl.profileLocalServiceImpl" />
+	<bean id="com.db.service.profileService" class="com.db.service.impl.profileServiceImpl" />
+	<bean id="com.db.service.persistence.profilePersistence" class="com.db.service.persistence.profilePersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.profile_social_linkLocalService" class="com.db.service.impl.profile_social_linkLocalServiceImpl" />
+	<bean id="com.db.service.profile_social_linkService" class="com.db.service.impl.profile_social_linkServiceImpl" />
+	<bean id="com.db.service.persistence.profile_social_linkPersistence" class="com.db.service.persistence.profile_social_linkPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.recommendationsLocalService" class="com.db.service.impl.recommendationsLocalServiceImpl" />
+	<bean id="com.db.service.recommendationsService" class="com.db.service.impl.recommendationsServiceImpl" />
+	<bean id="com.db.service.persistence.recommendationsPersistence" class="com.db.service.persistence.recommendationsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.skillLocalService" class="com.db.service.impl.skillLocalServiceImpl" />
+	<bean id="com.db.service.skillService" class="com.db.service.impl.skillServiceImpl" />
+	<bean id="com.db.service.persistence.skillPersistence" class="com.db.service.persistence.skillPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.skill_user_mappingLocalService" class="com.db.service.impl.skill_user_mappingLocalServiceImpl" />
+	<bean id="com.db.service.skill_user_mappingService" class="com.db.service.impl.skill_user_mappingServiceImpl" />
+	<bean id="com.db.service.persistence.skill_user_mappingPersistence" class="com.db.service.persistence.skill_user_mappingPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.social_loginLocalService" class="com.db.service.impl.social_loginLocalServiceImpl" />
+	<bean id="com.db.service.social_loginService" class="com.db.service.impl.social_loginServiceImpl" />
+	<bean id="com.db.service.persistence.social_loginPersistence" class="com.db.service.persistence.social_loginPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.social_type_masterLocalService" class="com.db.service.impl.social_type_masterLocalServiceImpl" />
+	<bean id="com.db.service.social_type_masterService" class="com.db.service.impl.social_type_masterServiceImpl" />
+	<bean id="com.db.service.persistence.social_type_masterPersistence" class="com.db.service.persistence.social_type_masterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.type_masterLocalService" class="com.db.service.impl.type_masterLocalServiceImpl" />
+	<bean id="com.db.service.type_masterService" class="com.db.service.impl.type_masterServiceImpl" />
+	<bean id="com.db.service.persistence.type_masterPersistence" class="com.db.service.persistence.type_masterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.db.service.user_contactLocalService" class="com.db.service.impl.user_contactLocalServiceImpl" />
+	<bean id="com.db.service.user_contactService" class="com.db.service.impl.user_contactServiceImpl" />
+	<bean id="com.db.service.persistence.user_contactPersistence" class="com.db.service.persistence.user_contactPersistenceImpl" parent="basePersistence" />
+</beans>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.db">
+	<author>ganjuss</author>
+	<namespace>database</namespace>
+    <entity name="user_contact" local-service="true" table="c_user_contact">
+        <column name="cid" primary="true" type="long"></column>
+        <column name="profile_id" type="long" primary="false"></column>
+        <column name="user_id" type="long"></column>
+        <column name="email" type="String"></column>
+        <column name="phone" type="long"></column>
+        <column name="dob" type="Date" primary="false"></column>
+        <column name="city" type="String"></column>
+        <column name="gender" type="String"></column>
+    </entity>
+    <entity name="profile" local-service="true" table="c_profile">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="type_id" type="long"></column>
+        <column name="genere_id" type="long"></column>
+        <column name="user_id" type="long"></column>
+    </entity>
+    <entity name="media_links" local-service="true" table="c_media_links">
+        <column name="cid" primary="true" type="long"></column>
+        <column name="profile_id" type="long"></column>
+        <column name="media_type_id" type="long"></column>
+        <column name="link" type="String"></column>
+    </entity>
+    <entity name="media_links_master" local-service="true" table="c_media_link_master">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+    </entity>
+    <entity name="cfm" local-service="true" table="c_cfm">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="cfm_by" type="long"></column>
+        <column name="cfm_to" type="long"></column>
+        <column name="cfm_type_id" type="long"></column>
+    </entity>
+    <entity name="club_users" local-service="true" table="c_club_users">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="club_id" type="long"></column>
+        <column name="user_id" type="long"></column>
+    </entity>
+    <entity name="clubs" local-service="true" table="c_club">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="admin_user_id" type="long"></column>
+    </entity>
+    <entity name="profile_social_link" local-service="true" table="c_profile_social_link">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="social_type_id" type="long"></column>
+        <column name="link" type="String"></column>
+        <column name="profile_id" type="long"></column>
+    </entity>
+    <entity name="acheivements" local-service="true" table="c_acheivments">
+        <column name="cid" type="long" primary="true"></column>
+    </entity>
+    <entity name="recommendations" local-service="true" table="c_recommendations">
+        <column name="cid" type="long" primary="true"></column>
+    </entity>
+    <entity name="hit_count" local-service="true" table="c_hit_count">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="profile_id" type="long"></column>
+        <column name="user_id" type="long"></column>
+        <column name="counter" type="long"></column>
+        <column name="highfive" type="long"></column>
+    </entity>
+    <entity name="skill_user_mapping" local-service="true" table="c_skill_user_mapping">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="skill_id" type="long"></column>
+        <column name="profile_id" type="long"></column>
+        <column name="type_id" type="long"></column>
+    </entity>
+    <entity name="social_login" local-service="true" table="c_social_login">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="social_type_id" type="long"></column>
+        <column name="profile_id" type="long"></column>
+        <column name="social_id" type="long"></column>
+    </entity>
+    <entity name="about_us" local-service="true" table="c_about_us">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="profile_id" type="long"></column>
+        <column name="text" type="String"></column>
+    </entity>
+    <entity name="social_type_master" local-service="true" table="c_social_type_master">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+    </entity>
+    <entity name="type_master" local-service="true" table="c_type_master">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+    </entity>
+    <entity name="skill" local-service="true" table="c_skill">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+    </entity>
+    <entity name="genere_master" local-service="true" table="c_genere_master">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+    </entity>
+    <entity name="notifications" local-service="true" table="c_notifications">
+        <column name="cid" type="long" primary="true"></column>
+    </entity>
+    <entity name="messages" local-service="true" table="c_messages">
+        <column name="cid" type="long" primary="true"></column>
+    </entity>
+    <entity name="cfm_master" local-service="true">
+        <column name="cid" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+    </entity>
+</service-builder>

@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.db.model.about_us" />
+	<import class="com.db.model.acheivements" />
+	<import class="com.db.model.cfm" />
+	<import class="com.db.model.cfm_master" />
+	<import class="com.db.model.club_users" />
+	<import class="com.db.model.clubs" />
+	<import class="com.db.model.genere_master" />
+	<import class="com.db.model.hit_count" />
+	<import class="com.db.model.media_links" />
+	<import class="com.db.model.media_links_master" />
+	<import class="com.db.model.messages" />
+	<import class="com.db.model.notifications" />
+	<import class="com.db.model.profile" />
+	<import class="com.db.model.profile_social_link" />
+	<import class="com.db.model.recommendations" />
+	<import class="com.db.model.skill" />
+	<import class="com.db.model.skill_user_mapping" />
+	<import class="com.db.model.social_login" />
+	<import class="com.db.model.social_type_master" />
+	<import class="com.db.model.type_master" />
+	<import class="com.db.model.user_contact" />
+	<class name="com.db.model.impl.about_usImpl" table="c_about_us">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="profile_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="text" type="com.liferay.portal.dao.orm.hibernate.StringType" column="text_" />
+	</class>
+	<class name="com.db.model.impl.acheivementsImpl" table="c_acheivments">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+	</class>
+	<class name="com.db.model.impl.cfmImpl" table="c_cfm">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="cfm_by" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="cfm_to" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="cfm_type_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.cfm_masterImpl" table="database_cfm_master">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.db.model.impl.club_usersImpl" table="c_club_users">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="club_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="user_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.clubsImpl" table="c_club">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="admin_user_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.genere_masterImpl" table="c_genere_master">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.db.model.impl.hit_countImpl" table="c_hit_count">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="profile_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="user_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="counter" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="highfive" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.media_linksImpl" table="c_media_links">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="profile_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="media_type_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="link" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.db.model.impl.media_links_masterImpl" table="c_media_link_master">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.db.model.impl.messagesImpl" table="c_messages">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+	</class>
+	<class name="com.db.model.impl.notificationsImpl" table="c_notifications">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+	</class>
+	<class name="com.db.model.impl.profileImpl" table="c_profile">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="type_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="genere_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="user_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.profile_social_linkImpl" table="c_profile_social_link">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="social_type_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="link" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="profile_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.recommendationsImpl" table="c_recommendations">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+	</class>
+	<class name="com.db.model.impl.skillImpl" table="c_skill">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.db.model.impl.skill_user_mappingImpl" table="c_skill_user_mapping">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="skill_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="profile_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="type_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.social_loginImpl" table="c_social_login">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="social_type_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="profile_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="social_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.db.model.impl.social_type_masterImpl" table="c_social_type_master">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.db.model.impl.type_masterImpl" table="c_type_master">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.db.model.impl.user_contactImpl" table="c_user_contact">
+		<cache usage="read-write" />
+		<id name="cid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="profile_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="user_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="dob" type="org.hibernate.type.TimestampType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gender" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
