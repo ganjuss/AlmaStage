@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.ModelAndView;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
+import com.liferay.portal.model.User;
+import com.liferay.portal.theme.ThemeDisplay;
+
 /**
  * Portlet implementation class Profile
  */
@@ -19,8 +22,9 @@ public class ProfileController  {
 		
 		ModelAndView modelAndView=new ModelAndView();
 
-
-		modelAndView.addObject("hi","portlet");
+		ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute("LIFERAY_SHARED_THEME_DISPLAY");
+User user=themeDisplay.getUser();
+		modelAndView.addObject("hi",user.getEmailAddress());
 		
 		modelAndView.setViewName("profile");
 		return modelAndView;
