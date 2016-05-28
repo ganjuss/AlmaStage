@@ -8,7 +8,7 @@
         <column name="profile_id" type="long" primary="false"></column>
         <column name="user_id" type="long"></column>
         <column name="email" type="String"></column>
-        <column name="phone" type="long"></column>
+        <column name="phone" type="String"></column>
         <column name="dob" type="Date" primary="false"></column>
         <column name="city" type="String"></column>
         <column name="gender" type="String"></column>
@@ -18,6 +18,7 @@
         <column name="type_id" type="long"></column>
         <column name="genere_id" type="long"></column>
         <column name="user_id" type="long"></column>
+        <column name="profile_name" type="String"></column>
     </entity>
     <entity name="media_links" local-service="true" table="c_media_links">
         <column name="cid" primary="true" type="long"></column>
@@ -92,6 +93,7 @@
     <entity name="skill" local-service="true" table="c_skill">
         <column name="cid" type="long" primary="true"></column>
         <column name="name" type="String"></column>
+        <column name="genere_id" type="long"></column>
     </entity>
     <entity name="genere_master" local-service="true" table="c_genere_master">
         <column name="cid" type="long" primary="true"></column>

@@ -1,5 +1,6 @@
 package com.alma.controller;
 
+import javax.portlet.PortletSession;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
@@ -23,6 +24,7 @@ public class ProfileController  {
 		ModelAndView modelAndView=new ModelAndView();
 
 		ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute("LIFERAY_SHARED_THEME_DISPLAY");
+		PortletSession portletSession=renderRequest.getPortletSession();
 User user=themeDisplay.getUser();
 		modelAndView.addObject("hi",user.getEmailAddress());
 		

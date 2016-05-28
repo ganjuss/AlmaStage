@@ -23,6 +23,7 @@ import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 import com.liferay.portal.service.ServiceContext;
@@ -65,9 +66,10 @@ public class profileModelImpl extends BaseModelImpl<profile>
 			{ "cid", Types.BIGINT },
 			{ "type_id", Types.BIGINT },
 			{ "genere_id", Types.BIGINT },
-			{ "user_id", Types.BIGINT }
+			{ "user_id", Types.BIGINT },
+			{ "profile_name", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table c_profile (cid LONG not null primary key,type_id LONG,genere_id LONG,user_id LONG)";
+	public static final String TABLE_SQL_CREATE = "create table c_profile (cid LONG not null primary key,type_id LONG,genere_id LONG,user_id LONG,profile_name VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table c_profile";
 	public static final String ORDER_BY_JPQL = " ORDER BY profile.cid ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY c_profile.cid ASC";
@@ -97,6 +99,7 @@ public class profileModelImpl extends BaseModelImpl<profile>
 		model.setType_id(soapModel.getType_id());
 		model.setGenere_id(soapModel.getGenere_id());
 		model.setUser_id(soapModel.getUser_id());
+		model.setProfile_name(soapModel.getProfile_name());
 
 		return model;
 	}
@@ -165,6 +168,7 @@ public class profileModelImpl extends BaseModelImpl<profile>
 		attributes.put("type_id", getType_id());
 		attributes.put("genere_id", getGenere_id());
 		attributes.put("user_id", getUser_id());
+		attributes.put("profile_name", getProfile_name());
 
 		return attributes;
 	}
@@ -193,6 +197,12 @@ public class profileModelImpl extends BaseModelImpl<profile>
 
 		if (user_id != null) {
 			setUser_id(user_id);
+		}
+
+		String profile_name = (String)attributes.get("profile_name");
+
+		if (profile_name != null) {
+			setProfile_name(profile_name);
 		}
 	}
 
@@ -240,6 +250,22 @@ public class profileModelImpl extends BaseModelImpl<profile>
 		_user_id = user_id;
 	}
 
+	@JSON
+	@Override
+	public String getProfile_name() {
+		if (_profile_name == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _profile_name;
+		}
+	}
+
+	@Override
+	public void setProfile_name(String profile_name) {
+		_profile_name = profile_name;
+	}
+
 	@Override
 	public ExpandoBridge getExpandoBridge() {
 		return ExpandoBridgeFactoryUtil.getExpandoBridge(0,
@@ -271,6 +297,7 @@ public class profileModelImpl extends BaseModelImpl<profile>
 		profileImpl.setType_id(getType_id());
 		profileImpl.setGenere_id(getGenere_id());
 		profileImpl.setUser_id(getUser_id());
+		profileImpl.setProfile_name(getProfile_name());
 
 		profileImpl.resetOriginalValues();
 
@@ -335,12 +362,20 @@ public class profileModelImpl extends BaseModelImpl<profile>
 
 		profileCacheModel.user_id = getUser_id();
 
+		profileCacheModel.profile_name = getProfile_name();
+
+		String profile_name = profileCacheModel.profile_name;
+
+		if ((profile_name != null) && (profile_name.length() == 0)) {
+			profileCacheModel.profile_name = null;
+		}
+
 		return profileCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{cid=");
 		sb.append(getCid());
@@ -350,6 +385,8 @@ public class profileModelImpl extends BaseModelImpl<profile>
 		sb.append(getGenere_id());
 		sb.append(", user_id=");
 		sb.append(getUser_id());
+		sb.append(", profile_name=");
+		sb.append(getProfile_name());
 		sb.append("}");
 
 		return sb.toString();
@@ -357,7 +394,7 @@ public class profileModelImpl extends BaseModelImpl<profile>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("com.db.model.profile");
@@ -379,6 +416,10 @@ public class profileModelImpl extends BaseModelImpl<profile>
 			"<column><column-name>user_id</column-name><column-value><![CDATA[");
 		sb.append(getUser_id());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>profile_name</column-name><column-value><![CDATA[");
+		sb.append(getProfile_name());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -393,5 +434,6 @@ public class profileModelImpl extends BaseModelImpl<profile>
 	private long _type_id;
 	private long _genere_id;
 	private long _user_id;
+	private String _profile_name;
 	private profile _escapedModel;
 }

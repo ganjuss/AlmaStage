@@ -137,8 +137,7 @@ $('#googlejson').val(googleProfileJson);
 <body>
 <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
  <script src="https://apis.google.com/js/platform.js" async defer></script>
-<form:form action="${authenticate}" commandName="SignupBean"
-	method="POST">
+<form:form action="${register}" commandName="signupBean" method="POST">
 ${passwordMatch}
 Enter your username:<input name="email" type="text" />
 	<form:hidden path="email" id="email" />
@@ -161,8 +160,8 @@ Enter your firstname:<input name="firstname" type="text" />
 	<form:hidden path="phone" id="phone" />
 	Enter your dob:<input name="dob" type="text" />
 	<form:hidden path="dob" id="dob" />
-		Enter your about:<input name="about" type="text" />
-	<form:hidden path="about" id="about" />
+		Enter your about:<input name="about_you" type="text" />
+	<form:hidden path="about_you" id="about_you" />
 		Enter your skills:<input name="skills" type="text" />
 	<form:hidden path="skills" id="skills" />
 		Enter your sociallinks:<input name="sociallinks" type="text" />

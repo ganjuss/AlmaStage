@@ -52,6 +52,7 @@ public class profileWrapper implements profile, ModelWrapper<profile> {
 		attributes.put("type_id", getType_id());
 		attributes.put("genere_id", getGenere_id());
 		attributes.put("user_id", getUser_id());
+		attributes.put("profile_name", getProfile_name());
 
 		return attributes;
 	}
@@ -80,6 +81,12 @@ public class profileWrapper implements profile, ModelWrapper<profile> {
 
 		if (user_id != null) {
 			setUser_id(user_id);
+		}
+
+		String profile_name = (String)attributes.get("profile_name");
+
+		if (profile_name != null) {
+			setProfile_name(profile_name);
 		}
 	}
 
@@ -181,6 +188,26 @@ public class profileWrapper implements profile, ModelWrapper<profile> {
 	@Override
 	public void setUser_id(long user_id) {
 		_profile.setUser_id(user_id);
+	}
+
+	/**
+	* Returns the profile_name of this profile.
+	*
+	* @return the profile_name of this profile
+	*/
+	@Override
+	public java.lang.String getProfile_name() {
+		return _profile.getProfile_name();
+	}
+
+	/**
+	* Sets the profile_name of this profile.
+	*
+	* @param profile_name the profile_name of this profile
+	*/
+	@Override
+	public void setProfile_name(java.lang.String profile_name) {
+		_profile.setProfile_name(profile_name);
 	}
 
 	@Override

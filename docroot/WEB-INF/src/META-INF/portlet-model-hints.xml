@@ -61,6 +61,7 @@
 		<field name="type_id" type="long" />
 		<field name="genere_id" type="long" />
 		<field name="user_id" type="long" />
+		<field name="profile_name" type="String" />
 	</model>
 	<model name="com.db.model.profile_social_link">
 		<field name="cid" type="long" />
@@ -74,6 +75,7 @@
 	<model name="com.db.model.skill">
 		<field name="cid" type="long" />
 		<field name="name" type="String" />
+		<field name="genere_id" type="long" />
 	</model>
 	<model name="com.db.model.skill_user_mapping">
 		<field name="cid" type="long" />
@@ -100,7 +102,7 @@
 		<field name="profile_id" type="long" />
 		<field name="user_id" type="long" />
 		<field name="email" type="String" />
-		<field name="phone" type="long" />
+		<field name="phone" type="String" />
 		<field name="dob" type="Date" />
 		<field name="city" type="String" />
 		<field name="gender" type="String" />

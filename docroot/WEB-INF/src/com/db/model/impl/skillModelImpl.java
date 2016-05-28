@@ -63,9 +63,10 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 	public static final String TABLE_NAME = "c_skill";
 	public static final Object[][] TABLE_COLUMNS = {
 			{ "cid", Types.BIGINT },
-			{ "name", Types.VARCHAR }
+			{ "name", Types.VARCHAR },
+			{ "genere_id", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table c_skill (cid LONG not null primary key,name VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table c_skill (cid LONG not null primary key,name VARCHAR(75) null,genere_id LONG)";
 	public static final String TABLE_SQL_DROP = "drop table c_skill";
 	public static final String ORDER_BY_JPQL = " ORDER BY skill.cid ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY c_skill.cid ASC";
@@ -93,6 +94,7 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 
 		model.setCid(soapModel.getCid());
 		model.setName(soapModel.getName());
+		model.setGenere_id(soapModel.getGenere_id());
 
 		return model;
 	}
@@ -159,6 +161,7 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 
 		attributes.put("cid", getCid());
 		attributes.put("name", getName());
+		attributes.put("genere_id", getGenere_id());
 
 		return attributes;
 	}
@@ -175,6 +178,12 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 
 		if (name != null) {
 			setName(name);
+		}
+
+		Long genere_id = (Long)attributes.get("genere_id");
+
+		if (genere_id != null) {
+			setGenere_id(genere_id);
 		}
 	}
 
@@ -203,6 +212,17 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 	@Override
 	public void setName(String name) {
 		_name = name;
+	}
+
+	@JSON
+	@Override
+	public long getGenere_id() {
+		return _genere_id;
+	}
+
+	@Override
+	public void setGenere_id(long genere_id) {
+		_genere_id = genere_id;
 	}
 
 	@Override
@@ -234,6 +254,7 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 
 		skillImpl.setCid(getCid());
 		skillImpl.setName(getName());
+		skillImpl.setGenere_id(getGenere_id());
 
 		skillImpl.resetOriginalValues();
 
@@ -300,17 +321,21 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 			skillCacheModel.name = null;
 		}
 
+		skillCacheModel.genere_id = getGenere_id();
+
 		return skillCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(5);
+		StringBundler sb = new StringBundler(7);
 
 		sb.append("{cid=");
 		sb.append(getCid());
 		sb.append(", name=");
 		sb.append(getName());
+		sb.append(", genere_id=");
+		sb.append(getGenere_id());
 		sb.append("}");
 
 		return sb.toString();
@@ -318,7 +343,7 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(10);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("<model><model-name>");
 		sb.append("com.db.model.skill");
@@ -332,6 +357,10 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 			"<column><column-name>name</column-name><column-value><![CDATA[");
 		sb.append(getName());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>genere_id</column-name><column-value><![CDATA[");
+		sb.append(getGenere_id());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -342,5 +371,6 @@ public class skillModelImpl extends BaseModelImpl<skill> implements skillModel {
 	private static Class<?>[] _escapedModelInterfaces = new Class[] { skill.class };
 	private long _cid;
 	private String _name;
+	private long _genere_id;
 	private skill _escapedModel;
 }

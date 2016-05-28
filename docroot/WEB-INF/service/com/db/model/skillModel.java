@@ -86,6 +86,20 @@ public interface skillModel extends BaseModel<skill> {
 	 */
 	public void setName(String name);
 
+	/**
+	 * Returns the genere_id of this skill.
+	 *
+	 * @return the genere_id of this skill
+	 */
+	public long getGenere_id();
+
+	/**
+	 * Sets the genere_id of this skill.
+	 *
+	 * @param genere_id the genere_id of this skill
+	 */
+	public void setGenere_id(long genere_id);
+
 	@Override
 	public boolean isNew();
 

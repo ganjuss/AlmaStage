@@ -34,6 +34,7 @@ public class profileSoap implements Serializable {
 		soapModel.setType_id(model.getType_id());
 		soapModel.setGenere_id(model.getGenere_id());
 		soapModel.setUser_id(model.getUser_id());
+		soapModel.setProfile_name(model.getProfile_name());
 
 		return soapModel;
 	}
@@ -118,8 +119,17 @@ public class profileSoap implements Serializable {
 		_user_id = user_id;
 	}
 
+	public String getProfile_name() {
+		return _profile_name;
+	}
+
+	public void setProfile_name(String profile_name) {
+		_profile_name = profile_name;
+	}
+
 	private long _cid;
 	private long _type_id;
 	private long _genere_id;
 	private long _user_id;
+	private String _profile_name;
 }

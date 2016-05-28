@@ -76,7 +76,12 @@ public class user_contactCacheModel implements CacheModel<user_contact>,
 			user_contactImpl.setEmail(email);
 		}
 
-		user_contactImpl.setPhone(phone);
+		if (phone == null) {
+			user_contactImpl.setPhone(StringPool.BLANK);
+		}
+		else {
+			user_contactImpl.setPhone(phone);
+		}
 
 		if (dob == Long.MIN_VALUE) {
 			user_contactImpl.setDob(null);
@@ -110,7 +115,7 @@ public class user_contactCacheModel implements CacheModel<user_contact>,
 		profile_id = objectInput.readLong();
 		user_id = objectInput.readLong();
 		email = objectInput.readUTF();
-		phone = objectInput.readLong();
+		phone = objectInput.readUTF();
 		dob = objectInput.readLong();
 		city = objectInput.readUTF();
 		gender = objectInput.readUTF();
@@ -130,7 +135,13 @@ public class user_contactCacheModel implements CacheModel<user_contact>,
 			objectOutput.writeUTF(email);
 		}
 
-		objectOutput.writeLong(phone);
+		if (phone == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(phone);
+		}
+
 		objectOutput.writeLong(dob);
 
 		if (city == null) {
@@ -152,7 +163,7 @@ public class user_contactCacheModel implements CacheModel<user_contact>,
 	public long profile_id;
 	public long user_id;
 	public String email;
-	public long phone;
+	public String phone;
 	public long dob;
 	public String city;
 	public String gender;

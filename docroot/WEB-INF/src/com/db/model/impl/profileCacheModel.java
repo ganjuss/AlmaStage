@@ -17,6 +17,7 @@ package com.db.model.impl;
 import com.db.model.profile;
 
 import com.liferay.portal.kernel.util.StringBundler;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.CacheModel;
 
 import java.io.Externalizable;
@@ -34,7 +35,7 @@ import java.io.ObjectOutput;
 public class profileCacheModel implements CacheModel<profile>, Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{cid=");
 		sb.append(cid);
@@ -44,6 +45,8 @@ public class profileCacheModel implements CacheModel<profile>, Externalizable {
 		sb.append(genere_id);
 		sb.append(", user_id=");
 		sb.append(user_id);
+		sb.append(", profile_name=");
+		sb.append(profile_name);
 		sb.append("}");
 
 		return sb.toString();
@@ -58,6 +61,13 @@ public class profileCacheModel implements CacheModel<profile>, Externalizable {
 		profileImpl.setGenere_id(genere_id);
 		profileImpl.setUser_id(user_id);
 
+		if (profile_name == null) {
+			profileImpl.setProfile_name(StringPool.BLANK);
+		}
+		else {
+			profileImpl.setProfile_name(profile_name);
+		}
+
 		profileImpl.resetOriginalValues();
 
 		return profileImpl;
@@ -69,6 +79,7 @@ public class profileCacheModel implements CacheModel<profile>, Externalizable {
 		type_id = objectInput.readLong();
 		genere_id = objectInput.readLong();
 		user_id = objectInput.readLong();
+		profile_name = objectInput.readUTF();
 	}
 
 	@Override
@@ -78,10 +89,18 @@ public class profileCacheModel implements CacheModel<profile>, Externalizable {
 		objectOutput.writeLong(type_id);
 		objectOutput.writeLong(genere_id);
 		objectOutput.writeLong(user_id);
+
+		if (profile_name == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(profile_name);
+		}
 	}
 
 	public long cid;
 	public long type_id;
 	public long genere_id;
 	public long user_id;
+	public String profile_name;
 }

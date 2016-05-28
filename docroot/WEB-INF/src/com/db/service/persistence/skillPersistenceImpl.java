@@ -316,6 +316,7 @@ public class skillPersistenceImpl extends BasePersistenceImpl<skill>
 
 		skillImpl.setCid(skill.getCid());
 		skillImpl.setName(skill.getName());
+		skillImpl.setGenere_id(skill.getGenere_id());
 
 		return skillImpl;
 	}

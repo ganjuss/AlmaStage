@@ -112,7 +112,7 @@ public class user_contactClp extends BaseModelImpl<user_contact>
 			setEmail(email);
 		}
 
-		Long phone = (Long)attributes.get("phone");
+		String phone = (String)attributes.get("phone");
 
 		if (phone != null) {
 			setPhone(phone);
@@ -230,19 +230,19 @@ public class user_contactClp extends BaseModelImpl<user_contact>
 	}
 
 	@Override
-	public long getPhone() {
+	public String getPhone() {
 		return _phone;
 	}
 
 	@Override
-	public void setPhone(long phone) {
+	public void setPhone(String phone) {
 		_phone = phone;
 
 		if (_user_contactRemoteModel != null) {
 			try {
 				Class<?> clazz = _user_contactRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setPhone", long.class);
+				Method method = clazz.getMethod("setPhone", String.class);
 
 				method.invoke(_user_contactRemoteModel, phone);
 			}
@@ -523,7 +523,7 @@ public class user_contactClp extends BaseModelImpl<user_contact>
 	private long _profile_id;
 	private long _user_id;
 	private String _email;
-	private long _phone;
+	private String _phone;
 	private Date _dob;
 	private String _city;
 	private String _gender;

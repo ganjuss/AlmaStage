@@ -321,6 +321,7 @@ public class profilePersistenceImpl extends BasePersistenceImpl<profile>
 		profileImpl.setType_id(profile.getType_id());
 		profileImpl.setGenere_id(profile.getGenere_id());
 		profileImpl.setUser_id(profile.getUser_id());
+		profileImpl.setProfile_name(profile.getProfile_name());
 
 		return profileImpl;
 	}

@@ -130,6 +130,7 @@
 			<basic name="type_id" />
 			<basic name="genere_id" />
 			<basic name="user_id" />
+			<basic name="profile_name" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -158,6 +159,7 @@
 		<attributes>
 			<id name="cid" />
 			<basic name="name" />
+			<basic name="genere_id" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

@@ -88,7 +88,7 @@ public class user_contactWrapper implements user_contact,
 			setEmail(email);
 		}
 
-		Long phone = (Long)attributes.get("phone");
+		String phone = (String)attributes.get("phone");
 
 		if (phone != null) {
 			setPhone(phone);
@@ -219,7 +219,7 @@ public class user_contactWrapper implements user_contact,
 	* @return the phone of this user_contact
 	*/
 	@Override
-	public long getPhone() {
+	public java.lang.String getPhone() {
 		return _user_contact.getPhone();
 	}
 
@@ -229,7 +229,7 @@ public class user_contactWrapper implements user_contact,
 	* @param phone the phone of this user_contact
 	*/
 	@Override
-	public void setPhone(long phone) {
+	public void setPhone(java.lang.String phone) {
 		_user_contact.setPhone(phone);
 	}
 

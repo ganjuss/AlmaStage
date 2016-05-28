@@ -64,7 +64,8 @@ create table c_profile (
 	cid LONG not null primary key,
 	type_id LONG,
 	genere_id LONG,
-	user_id LONG
+	user_id LONG,
+	profile_name VARCHAR(75) null
 );
 
 create table c_profile_social_link (
@@ -80,7 +81,8 @@ create table c_recommendations (
 
 create table c_skill (
 	cid LONG not null primary key,
-	name VARCHAR(75) null
+	name VARCHAR(75) null,
+	genere_id LONG
 );
 
 create table c_skill_user_mapping (
@@ -112,7 +114,7 @@ create table c_user_contact (
 	profile_id LONG,
 	user_id LONG,
 	email VARCHAR(75) null,
-	phone LONG,
+	phone VARCHAR(75) null,
 	dob DATE null,
 	city VARCHAR(75) null,
 	gender VARCHAR(75) null

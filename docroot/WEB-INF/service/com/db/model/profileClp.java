@@ -76,6 +76,7 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 		attributes.put("type_id", getType_id());
 		attributes.put("genere_id", getGenere_id());
 		attributes.put("user_id", getUser_id());
+		attributes.put("profile_name", getProfile_name());
 
 		return attributes;
 	}
@@ -104,6 +105,12 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 
 		if (user_id != null) {
 			setUser_id(user_id);
+		}
+
+		String profile_name = (String)attributes.get("profile_name");
+
+		if (profile_name != null) {
+			setProfile_name(profile_name);
 		}
 	}
 
@@ -199,6 +206,29 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 		}
 	}
 
+	@Override
+	public String getProfile_name() {
+		return _profile_name;
+	}
+
+	@Override
+	public void setProfile_name(String profile_name) {
+		_profile_name = profile_name;
+
+		if (_profileRemoteModel != null) {
+			try {
+				Class<?> clazz = _profileRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setProfile_name", String.class);
+
+				method.invoke(_profileRemoteModel, profile_name);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
 	public BaseModel<?> getprofileRemoteModel() {
 		return _profileRemoteModel;
 	}
@@ -272,6 +302,7 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 		clone.setType_id(getType_id());
 		clone.setGenere_id(getGenere_id());
 		clone.setUser_id(getUser_id());
+		clone.setProfile_name(getProfile_name());
 
 		return clone;
 	}
@@ -324,7 +355,7 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{cid=");
 		sb.append(getCid());
@@ -334,6 +365,8 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 		sb.append(getGenere_id());
 		sb.append(", user_id=");
 		sb.append(getUser_id());
+		sb.append(", profile_name=");
+		sb.append(getProfile_name());
 		sb.append("}");
 
 		return sb.toString();
@@ -341,7 +374,7 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("com.db.model.profile");
@@ -363,6 +396,10 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 			"<column><column-name>user_id</column-name><column-value><![CDATA[");
 		sb.append(getUser_id());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>profile_name</column-name><column-value><![CDATA[");
+		sb.append(getProfile_name());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -373,6 +410,7 @@ public class profileClp extends BaseModelImpl<profile> implements profile {
 	private long _type_id;
 	private long _genere_id;
 	private long _user_id;
+	private String _profile_name;
 	private BaseModel<?> _profileRemoteModel;
 	private Class<?> _clpSerializerClass = com.db.service.ClpSerializer.class;
 }

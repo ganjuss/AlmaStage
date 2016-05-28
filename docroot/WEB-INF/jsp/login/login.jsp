@@ -151,8 +151,8 @@ Enter your password:<input name="password" type="text" />
 	<input type="submit" />
 </form:form>
 <form:form action="${facebook}" method="POST" name="facebookform">
-    <input type="text" id="status">
-        <input type="text" id="photo">
+    <input type="text" id="status" name="facebookemailJson">
+        <input type="text" id="photo" name="facebookpicjson">
             <input type="text" id="googlejson">
         
     

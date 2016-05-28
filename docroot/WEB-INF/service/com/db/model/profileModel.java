@@ -14,6 +14,7 @@
 
 package com.db.model;
 
+import com.liferay.portal.kernel.bean.AutoEscape;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
@@ -111,6 +112,21 @@ public interface profileModel extends BaseModel<profile> {
 	 * @param user_id the user_id of this profile
 	 */
 	public void setUser_id(long user_id);
+
+	/**
+	 * Returns the profile_name of this profile.
+	 *
+	 * @return the profile_name of this profile
+	 */
+	@AutoEscape
+	public String getProfile_name();
+
+	/**
+	 * Sets the profile_name of this profile.
+	 *
+	 * @param profile_name the profile_name of this profile
+	 */
+	public void setProfile_name(String profile_name);
 
 	@Override
 	public boolean isNew();

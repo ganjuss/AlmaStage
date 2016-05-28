@@ -32,6 +32,7 @@ public class skillSoap implements Serializable {
 
 		soapModel.setCid(model.getCid());
 		soapModel.setName(model.getName());
+		soapModel.setGenere_id(model.getGenere_id());
 
 		return soapModel;
 	}
@@ -100,6 +101,15 @@ public class skillSoap implements Serializable {
 		_name = name;
 	}
 
+	public long getGenere_id() {
+		return _genere_id;
+	}
+
+	public void setGenere_id(long genere_id) {
+		_genere_id = genere_id;
+	}
+
 	private long _cid;
 	private String _name;
+	private long _genere_id;
 }

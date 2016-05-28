@@ -121,14 +121,15 @@ public interface user_contactModel extends BaseModel<user_contact> {
 	 *
 	 * @return the phone of this user_contact
 	 */
-	public long getPhone();
+	@AutoEscape
+	public String getPhone();
 
 	/**
 	 * Sets the phone of this user_contact.
 	 *
 	 * @param phone the phone of this user_contact
 	 */
-	public void setPhone(long phone);
+	public void setPhone(String phone);
 
 	/**
 	 * Returns the dob of this user_contact.

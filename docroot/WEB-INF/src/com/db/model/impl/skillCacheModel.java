@@ -35,12 +35,14 @@ import java.io.ObjectOutput;
 public class skillCacheModel implements CacheModel<skill>, Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(5);
+		StringBundler sb = new StringBundler(7);
 
 		sb.append("{cid=");
 		sb.append(cid);
 		sb.append(", name=");
 		sb.append(name);
+		sb.append(", genere_id=");
+		sb.append(genere_id);
 		sb.append("}");
 
 		return sb.toString();
@@ -59,6 +61,8 @@ public class skillCacheModel implements CacheModel<skill>, Externalizable {
 			skillImpl.setName(name);
 		}
 
+		skillImpl.setGenere_id(genere_id);
+
 		skillImpl.resetOriginalValues();
 
 		return skillImpl;
@@ -68,6 +72,7 @@ public class skillCacheModel implements CacheModel<skill>, Externalizable {
 	public void readExternal(ObjectInput objectInput) throws IOException {
 		cid = objectInput.readLong();
 		name = objectInput.readUTF();
+		genere_id = objectInput.readLong();
 	}
 
 	@Override
@@ -81,8 +86,11 @@ public class skillCacheModel implements CacheModel<skill>, Externalizable {
 		else {
 			objectOutput.writeUTF(name);
 		}
+
+		objectOutput.writeLong(genere_id);
 	}
 
 	public long cid;
 	public String name;
+	public long genere_id;
 }

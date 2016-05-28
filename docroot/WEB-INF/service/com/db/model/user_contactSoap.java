@@ -123,11 +123,11 @@ public class user_contactSoap implements Serializable {
 		_email = email;
 	}
 
-	public long getPhone() {
+	public String getPhone() {
 		return _phone;
 	}
 
-	public void setPhone(long phone) {
+	public void setPhone(String phone) {
 		_phone = phone;
 	}
 
@@ -159,7 +159,7 @@ public class user_contactSoap implements Serializable {
 	private long _profile_id;
 	private long _user_id;
 	private String _email;
-	private long _phone;
+	private String _phone;
 	private Date _dob;
 	private String _city;
 	private String _gender;

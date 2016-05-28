@@ -68,12 +68,12 @@ public class user_contactModelImpl extends BaseModelImpl<user_contact>
 			{ "profile_id", Types.BIGINT },
 			{ "user_id", Types.BIGINT },
 			{ "email", Types.VARCHAR },
-			{ "phone", Types.BIGINT },
+			{ "phone", Types.VARCHAR },
 			{ "dob", Types.TIMESTAMP },
 			{ "city", Types.VARCHAR },
 			{ "gender", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table c_user_contact (cid LONG not null primary key,profile_id LONG,user_id LONG,email VARCHAR(75) null,phone LONG,dob DATE null,city VARCHAR(75) null,gender VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table c_user_contact (cid LONG not null primary key,profile_id LONG,user_id LONG,email VARCHAR(75) null,phone VARCHAR(75) null,dob DATE null,city VARCHAR(75) null,gender VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table c_user_contact";
 	public static final String ORDER_BY_JPQL = " ORDER BY user_contact.cid ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY c_user_contact.cid ASC";
@@ -211,7 +211,7 @@ public class user_contactModelImpl extends BaseModelImpl<user_contact>
 			setEmail(email);
 		}
 
-		Long phone = (Long)attributes.get("phone");
+		String phone = (String)attributes.get("phone");
 
 		if (phone != null) {
 			setPhone(phone);
@@ -287,12 +287,17 @@ public class user_contactModelImpl extends BaseModelImpl<user_contact>
 
 	@JSON
 	@Override
-	public long getPhone() {
-		return _phone;
+	public String getPhone() {
+		if (_phone == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _phone;
+		}
 	}
 
 	@Override
-	public void setPhone(long phone) {
+	public void setPhone(String phone) {
 		_phone = phone;
 	}
 
@@ -446,6 +451,12 @@ public class user_contactModelImpl extends BaseModelImpl<user_contact>
 
 		user_contactCacheModel.phone = getPhone();
 
+		String phone = user_contactCacheModel.phone;
+
+		if ((phone != null) && (phone.length() == 0)) {
+			user_contactCacheModel.phone = null;
+		}
+
 		Date dob = getDob();
 
 		if (dob != null) {
@@ -553,7 +564,7 @@ public class user_contactModelImpl extends BaseModelImpl<user_contact>
 	private long _profile_id;
 	private long _user_id;
 	private String _email;
-	private long _phone;
+	private String _phone;
 	private Date _dob;
 	private String _city;
 	private String _gender;

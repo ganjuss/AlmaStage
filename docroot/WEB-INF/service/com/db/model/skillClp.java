@@ -74,6 +74,7 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 
 		attributes.put("cid", getCid());
 		attributes.put("name", getName());
+		attributes.put("genere_id", getGenere_id());
 
 		return attributes;
 	}
@@ -90,6 +91,12 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 
 		if (name != null) {
 			setName(name);
+		}
+
+		Long genere_id = (Long)attributes.get("genere_id");
+
+		if (genere_id != null) {
+			setGenere_id(genere_id);
 		}
 	}
 
@@ -132,6 +139,29 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 				Method method = clazz.getMethod("setName", String.class);
 
 				method.invoke(_skillRemoteModel, name);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getGenere_id() {
+		return _genere_id;
+	}
+
+	@Override
+	public void setGenere_id(long genere_id) {
+		_genere_id = genere_id;
+
+		if (_skillRemoteModel != null) {
+			try {
+				Class<?> clazz = _skillRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setGenere_id", long.class);
+
+				method.invoke(_skillRemoteModel, genere_id);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -210,6 +240,7 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 
 		clone.setCid(getCid());
 		clone.setName(getName());
+		clone.setGenere_id(getGenere_id());
 
 		return clone;
 	}
@@ -262,12 +293,14 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(5);
+		StringBundler sb = new StringBundler(7);
 
 		sb.append("{cid=");
 		sb.append(getCid());
 		sb.append(", name=");
 		sb.append(getName());
+		sb.append(", genere_id=");
+		sb.append(getGenere_id());
 		sb.append("}");
 
 		return sb.toString();
@@ -275,7 +308,7 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(10);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("<model><model-name>");
 		sb.append("com.db.model.skill");
@@ -289,6 +322,10 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 			"<column><column-name>name</column-name><column-value><![CDATA[");
 		sb.append(getName());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>genere_id</column-name><column-value><![CDATA[");
+		sb.append(getGenere_id());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -297,6 +334,7 @@ public class skillClp extends BaseModelImpl<skill> implements skill {
 
 	private long _cid;
 	private String _name;
+	private long _genere_id;
 	private BaseModel<?> _skillRemoteModel;
 	private Class<?> _clpSerializerClass = com.db.service.ClpSerializer.class;
 }

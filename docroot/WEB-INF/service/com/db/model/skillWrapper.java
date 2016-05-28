@@ -50,6 +50,7 @@ public class skillWrapper implements skill, ModelWrapper<skill> {
 
 		attributes.put("cid", getCid());
 		attributes.put("name", getName());
+		attributes.put("genere_id", getGenere_id());
 
 		return attributes;
 	}
@@ -66,6 +67,12 @@ public class skillWrapper implements skill, ModelWrapper<skill> {
 
 		if (name != null) {
 			setName(name);
+		}
+
+		Long genere_id = (Long)attributes.get("genere_id");
+
+		if (genere_id != null) {
+			setGenere_id(genere_id);
 		}
 	}
 
@@ -127,6 +134,26 @@ public class skillWrapper implements skill, ModelWrapper<skill> {
 	@Override
 	public void setName(java.lang.String name) {
 		_skill.setName(name);
+	}
+
+	/**
+	* Returns the genere_id of this skill.
+	*
+	* @return the genere_id of this skill
+	*/
+	@Override
+	public long getGenere_id() {
+		return _skill.getGenere_id();
+	}
+
+	/**
+	* Sets the genere_id of this skill.
+	*
+	* @param genere_id the genere_id of this skill
+	*/
+	@Override
+	public void setGenere_id(long genere_id) {
+		_skill.setGenere_id(genere_id);
 	}
 
 	@Override
